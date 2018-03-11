@@ -4,16 +4,18 @@ using System.Collections;
 public class UnityChanAnimations : MonoBehaviour {
     public Animator anim;
     public Rigidbody rigid;
-    public float msx, msz;
+    public float movement_speed_x, movement_speed_z;
     bool is_test;
     private bool is_running;
+    public float speed = 10.0F;
+    public float rotationSpeed = 100.0F; 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
-        msx = 1.5f;
-        msz = 2f;
+        movement_speed_x = 1.5f;
+        movement_speed_z = 2f;
         is_running = false;
         is_test = false;
     }
@@ -24,9 +26,9 @@ public class UnityChanAnimations : MonoBehaviour {
      */
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 move = new Vector3(moveHorizontal * msx * Time.deltaTime, 0f, moveVertical * msz * Time.deltaTime);
+        float move_horizontal = Input.GetAxis("Horizontal");
+        float move_vertical = Input.GetAxis("Vertical");
+        Vector3 move = new Vector3(move_horizontal * movement_speed_x * Time.deltaTime, 0f, move_vertical * movement_speed_z * Time.deltaTime);
        
         if(move.z == 0f)
         {
@@ -42,10 +44,10 @@ public class UnityChanAnimations : MonoBehaviour {
             move.z *= 2f;
         }
         rigid.MovePosition(transform.position + move);
-        anim.SetFloat("inputH", moveHorizontal);
-        anim.SetFloat("inputV", moveVertical);
+        anim.SetFloat("inputH", move_horizontal);
+        anim.SetFloat("inputV", move_vertical);
         
-        if(Input.GetKey(KeyCode.LeftShift) && moveVertical > 0)
+        if(Input.GetKey(KeyCode.LeftShift) && move_vertical > 0)
         {
             is_running = true;
         }
@@ -63,6 +65,11 @@ public class UnityChanAnimations : MonoBehaviour {
         }
         anim.SetBool("isRunning", is_running);
         anim.SetBool("isTest", is_test);
+        /*
+        float h = rotationSpeed * Input.GetAxis("Mouse X");
+        float v = rotationSpeed * Input.GetAxis("Mouse Y");
+        transform.Rotate(v, h, 0);*/
+
     }
     // Update is called once per frame
     void Update ()
