@@ -18,3 +18,7 @@ Tibet Timur,
 Ertuğrul Akay,
 
 Irmak Türköz.
+
+PLEASE Consult our Website for full game experience:
+
+https://annasreflection.wordpress.com/
