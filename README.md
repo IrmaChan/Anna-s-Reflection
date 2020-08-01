@@ -1,4 +1,4 @@
-#Anna's Reflection - A Thrilling Adventure 
+# Anna's Reflection - A Thrilling Adventure 
 From point click smart-phone games to triple-A quality console games, escape puzzles formed a cultural game niche aimed to entertain players through the feeling of accomplishment and appreciation of their intelligence.
 
 Our group is determined to create a PC game aimed to target audience that is explained above. We wanted to create a game with unique mechanics and an unforgettable story. We wanted to show the story of our main character, Anna, and her magical dark world.
@@ -19,6 +19,6 @@ Ertuğrul Akay,
 
 Irmak Türköz.
 
-PLEASE Consult our Website for full game experience:
+# PLEASE Consult our Website for full game experience:
 
 https://annasreflection.wordpress.com/
